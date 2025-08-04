@@ -61,34 +61,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
     }
   };
 
-  const getClubColors = (club: string) => {
-    const clubColors: { [key: string]: { primary: string; secondary: string } } = {
-      'Arsenal': { primary: 'bg-red-600', secondary: 'bg-white' },
-      'Chelsea': { primary: 'bg-blue-600', secondary: 'bg-white' },
-      'Liverpool': { primary: 'bg-red-500', secondary: 'bg-white' },
-      'Manchester City': { primary: 'bg-sky-500', secondary: 'bg-white' },
-      'Manchester United': { primary: 'bg-red-700', secondary: 'bg-yellow-400' },
-      'Tottenham': { primary: 'bg-white', secondary: 'bg-blue-600' },
-      'Newcastle': { primary: 'bg-black', secondary: 'bg-white' },
-      'Aston Villa': { primary: 'bg-purple-600', secondary: 'bg-white' },
-      'Brighton': { primary: 'bg-blue-500', secondary: 'bg-white' },
-      'Brentford': { primary: 'bg-red-600', secondary: 'bg-white' },
-      'Crystal Palace': { primary: 'bg-blue-600', secondary: 'bg-red-500' },
-      'Everton': { primary: 'bg-blue-600', secondary: 'bg-white' },
-      'Fulham': { primary: 'bg-white', secondary: 'bg-black' },
-      'Leeds': { primary: 'bg-yellow-500', secondary: 'bg-white' },
-      'Leicester': { primary: 'bg-blue-600', secondary: 'bg-white' },
-      'Nottingham Forest': { primary: 'bg-red-600', secondary: 'bg-white' },
-      'Southampton': { primary: 'bg-red-600', secondary: 'bg-white' },
-      'West Ham': { primary: 'bg-purple-600', secondary: 'bg-white' },
-      'Wolves': { primary: 'bg-orange-500', secondary: 'bg-black' },
-      'Burnley': { primary: 'bg-red-600', secondary: 'bg-white' },
-      'Luton': { primary: 'bg-orange-600', secondary: 'bg-white' },
-      'Sheffield United': { primary: 'bg-red-600', secondary: 'bg-white' },
-      'Bournemouth': { primary: 'bg-red-600', secondary: 'bg-black' },
-    };
-    return clubColors[club] || { primary: 'bg-gray-600', secondary: 'bg-white' };
-  };
+  
 
 
   return (
