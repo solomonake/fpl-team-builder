@@ -1,6 +1,5 @@
 import React, { useEffect, useState, type ChangeEvent } from 'react';
 import './App.css';
-import PlayerCard from './components/PlayerCard';
 import FootballPitch from './components/FootballPitch';
 import PlayerSearch from './components/PlayerSearch';
 import PlayerModal from './components/PlayerModal';
@@ -43,22 +42,28 @@ interface Player {
   reasoning?: string;
 }
 
+interface SmartTeamData {
+  team: Player[];
+  strategy: string;
+  expectedPoints: number;
+  totalCost: number;
+  reasoning: string[];
+}
+
 const App: React.FC = () => {
-  console.log('🎨 NEW FPL TEAM BUILDER LOADED! 🎨'); // Debug log
-  
   const [team, setTeam] = useState<Player[]>([]);
   const [allPlayers, setAllPlayers] = useState<Player[]>([]);
   const [budget, setBudget] = useState<number>(100);
   const [inputBudget, setInputBudget] = useState<string>('100');
   const [formation, setFormation] = useState<string>('4-4-2');
   const [showPlayerSearch, setShowPlayerSearch] = useState<boolean>(false);
-  const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
+  const [_selectedPlayer, _setSelectedPlayer] = useState<Player | null>(null);
   const [regenerate, setRegenerate] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
   const [showPlayerModal, setShowPlayerModal] = useState<boolean>(false);
   const [modalPlayer, setModalPlayer] = useState<Player | null>(null);
   const [teamStrategy, setTeamStrategy] = useState<string>('balanced');
-  const [smartTeamData, setSmartTeamData] = useState<any>(null);
+  const [smartTeamData, setSmartTeamData] = useState<SmartTeamData | null>(null);
   const [showFPLImporter, setShowFPLImporter] = useState<boolean>(false);
   const [showFormPlayers, setShowFormPlayers] = useState<boolean>(false);
   const [showTopTeams, setShowTopTeams] = useState<boolean>(false);
