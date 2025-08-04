@@ -7,7 +7,7 @@ import random
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://fpl-team-builder-roan.vercel.app", "http://localhost:3000", "http://localhost:5173", "http://localhost:5189"])
 
 def load_player_data():
     """Load and format player data"""
