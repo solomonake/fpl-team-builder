@@ -24,7 +24,7 @@ const FormPlayers: React.FC<FormPlayersProps> = ({ onPlayerSelect }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5001/api/form-players')
+    fetch('https://fpl-team-builder-api-ot1p.onrender.com/api/form-players')
       .then(response => response.json())
       .then(data => {
         setFormPlayers(data);

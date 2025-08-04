@@ -22,7 +22,7 @@ const TopTeams: React.FC<TopTeamsProps> = ({ onTeamSelect }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5001/api/top-teams')
+    fetch('https://fpl-team-builder-api-ot1p.onrender.com/api/top-teams')
       .then(response => response.json())
       .then(data => {
         setTopTeams(data);

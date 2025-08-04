@@ -47,7 +47,7 @@ const PlayerModal: React.FC<PlayerModalProps> = ({ player, isOpen, onClose }) =>
   useEffect(() => {
     if (player && player.playerId) {
       setLoading(true);
-      fetch(`http://127.0.0.1:5001/api/player/${player.playerId}`)
+      fetch(`https://fpl-team-builder-api-ot1p.onrender.com/api/player/${player.playerId}`)
         .then(response => response.json())
         .then(data => {
           setDetailedPlayer(data);

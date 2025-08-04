@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
   // Fetch all players for search
   useEffect(() => {
-    fetch('http://127.0.0.1:5001/api/all-players')
+    fetch('https://fpl-team-builder-api-ot1p.onrender.com/api/all-players')
       .then((response) => response.json())
       .then((data: any[]) => {
         const formattedData = data.map((player: any) => ({
@@ -85,7 +85,7 @@ const App: React.FC = () => {
   // Fetch team
   useEffect(() => {
     setLoading(true);
-    fetch(`http://127.0.0.1:5001/api/best-team?budget=${budget}`)
+          fetch(`https://fpl-team-builder-api-ot1p.onrender.com/api/best-team?budget=${budget}`)
       .then((response) => response.json())
       .then((data: any[]) => {
         const formattedData = data.map((player: any) => ({
@@ -157,7 +157,7 @@ const App: React.FC = () => {
 
   const handleSmartTeamGeneration = () => {
     setLoading(true);
-    fetch(`http://127.0.0.1:5001/api/smart-team?budget=${budget}&strategy=${teamStrategy}`)
+          fetch(`https://fpl-team-builder-api-ot1p.onrender.com/api/smart-team?budget=${budget}&strategy=${teamStrategy}`)
       .then((response) => response.json())
       .then((data: any) => {
         setTeam(data.team);
