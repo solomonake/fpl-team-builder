@@ -90,7 +90,6 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
     return clubColors[club] || { primary: 'bg-gray-600', secondary: 'bg-white' };
   };
 
-  const clubColors = getClubColors(player.club);
 
   return (
     <div
