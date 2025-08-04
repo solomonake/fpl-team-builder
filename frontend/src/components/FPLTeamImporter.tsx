@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import  { useState } from 'react';
 
 interface Player {
   firstName: string;
@@ -64,7 +64,8 @@ const FPLTeamImporter: React.FC<FPLTeamImporterProps> = ({ onTeamImport, allPlay
     
     try {
       // Mock FPL team import (in real implementation, this would call FPL API)
-      const mockTeam = generateMockFPLTeam(fplTeamId);
+      const mockTeam = generateMockFPLTeam();
+
       setCurrentTeam(mockTeam);
       onTeamImport(mockTeam);
       
@@ -81,7 +82,8 @@ const FPLTeamImporter: React.FC<FPLTeamImporterProps> = ({ onTeamImport, allPlay
     }
   };
 
-  const generateMockFPLTeam = (teamId: string): Player[] => {
+  const generateMockFPLTeam = (): Player[] => {
+
     // Mock team generation based on team ID
     const mockPlayers = [
       {
